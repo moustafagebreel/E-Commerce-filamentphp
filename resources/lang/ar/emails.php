@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_8' => 'قيمة عربية 8 لقسم emails',
-    'title_8' => 'عنوان عربي 8 لقسم emails',
-    'description_8' => 'وصف عربي 8 لقسم emails',
+    'key_9' => 'قيمة عربية 9 لقسم emails',
+    'title_9' => 'عنوان عربي 9 لقسم emails',
+    'description_9' => 'وصف عربي 9 لقسم emails',
 ];
