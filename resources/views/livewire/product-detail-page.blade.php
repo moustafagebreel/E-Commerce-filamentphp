@@ -100,5 +100,9 @@
 
         <!-- Customer Reviews Subsystem -->
         @livewire('product-reviews-component', ['product' => $product], key('reviews-'.$product->id))
+
+        <!-- Recently Viewed Products -->
+        @livewire('recently-viewed-products', ['currentProductId' => $product->id])
       </div>
 </div>
+
