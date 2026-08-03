@@ -31,7 +31,9 @@ use App\Livewire\Auth\ForgotPasswordPage;
 
 Route::get('/',HomePage::class);
 Route::get('/categories',CategoriesPage::class);
+Route::get('/brands/{slug}', \App\Livewire\BrandDetailPage::class);
 Route::get('cart',CartPage::class);
+
 Route::get('/products',ProductsPage::class);
 Route::get('/products/{product}',ProductDetailPage::class);
 Route::get('/checkout',CheckoutPage::class);
