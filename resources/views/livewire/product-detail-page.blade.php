@@ -104,8 +104,12 @@
         <!-- Product Questions and Answers -->
         @livewire('product-questions-component', ['productId' => $product->id], key('qa-'.$product->id))
 
+        <!-- You May Also Like -->
+        @livewire('related-products-widget', ['productId' => $product->id], key('related-'.$product->id))
+
         <!-- Recently Viewed Products -->
         @livewire('recently-viewed-products', ['currentProductId' => $product->id])
+
       </div>
 </div>
 
