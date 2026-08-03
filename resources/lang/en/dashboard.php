@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_13' => 'Value English 13 for dashboard',
-    'title_13' => 'Title English 13 for dashboard',
-    'description_13' => 'Description English 13 for dashboard',
+    'key_14' => 'Value English 14 for dashboard',
+    'title_14' => 'Title English 14 for dashboard',
+    'description_14' => 'Description English 14 for dashboard',
 ];
