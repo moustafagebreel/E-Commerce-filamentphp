@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_4' => 'قيمة عربية 4 لقسم checkout',
-    'title_4' => 'عنوان عربي 4 لقسم checkout',
-    'description_4' => 'وصف عربي 4 لقسم checkout',
+    'key_5' => 'قيمة عربية 5 لقسم checkout',
+    'title_5' => 'عنوان عربي 5 لقسم checkout',
+    'description_5' => 'وصف عربي 5 لقسم checkout',
 ];
