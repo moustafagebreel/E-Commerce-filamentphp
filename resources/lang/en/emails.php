@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_3' => 'Value English 3 for emails',
-    'title_3' => 'Title English 3 for emails',
-    'description_3' => 'Description English 3 for emails',
+    'key_4' => 'Value English 4 for emails',
+    'title_4' => 'Title English 4 for emails',
+    'description_4' => 'Description English 4 for emails',
 ];
