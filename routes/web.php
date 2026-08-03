@@ -45,4 +45,6 @@ Route::get('/forgot',ForgotPasswordPage::class);
 Route::get('/reset-password',ResetPasswordPage::class);
 Route::get('/success',SuccessPage::class);
 Route::get('/cancel',CancelPage::class);
+Route::get('/wishlist', \App\Livewire\WishlistPage::class);
 Route::get('/profile',ProfilePage::class);
+
