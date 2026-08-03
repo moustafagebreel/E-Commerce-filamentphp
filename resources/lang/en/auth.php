@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_6' => 'Value English 6 for auth',
-    'title_6' => 'Title English 6 for auth',
-    'description_6' => 'Description English 6 for auth',
+    'key_7' => 'Value English 7 for auth',
+    'title_7' => 'Title English 7 for auth',
+    'description_7' => 'Description English 7 for auth',
 ];

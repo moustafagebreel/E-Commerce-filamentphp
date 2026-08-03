@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_6' => 'قيمة عربية 6 لقسم auth',
-    'title_6' => 'عنوان عربي 6 لقسم auth',
-    'description_6' => 'وصف عربي 6 لقسم auth',
+    'key_7' => 'قيمة عربية 7 لقسم auth',
+    'title_7' => 'عنوان عربي 7 لقسم auth',
+    'description_7' => 'وصف عربي 7 لقسم auth',
 ];
