@@ -56,7 +56,9 @@ Route::get('/contact', \App\Livewire\ContactPage::class);
 Route::get('/faq', \App\Livewire\FaqPage::class);
 Route::get('/addresses', \App\Livewire\AddressesPage::class);
 Route::get('/wallet', \App\Livewire\CustomerWalletPage::class);
+Route::get('/track-order', \App\Livewire\OrderTrackingPage::class);
 Route::get('/profile',ProfilePage::class);
+
 
 
 
