@@ -18,15 +18,21 @@ class Address extends Model
         'email',
         'phone',
         'strret_address',
+        'street_address',
         'city',
         'state',
         'country',
         'zip_code',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     public function order()
     {
         return $this->belongsTo(Order::class);
     }
 }
+
