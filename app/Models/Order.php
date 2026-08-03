@@ -19,6 +19,8 @@ class Order extends Model
     'payment_method',
     'payment_status', 
     'currency',
+    'coupon_code',
+    'discount_amount',
     'shipping_amount',
     'shipping_method',
     'notes'
@@ -39,4 +41,10 @@ class Order extends Model
     {
         return $this->hasOne(Address::class);
     }
+
+    public function status_logs()
+    {
+        return $this->hasMany(OrderStatusLog::class);
+    }
 }
+
