@@ -15,6 +15,7 @@ use Filament\Tables\Actions\EditAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Forms\Components\TextInput;
+use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Columns\ImageColumn;
 use Filament\Forms\Components\FileUpload;
 use Illuminate\Database\Eloquent\Builder;
@@ -31,7 +32,7 @@ class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-tag';
 
     public static function form(Form $form): Form
     {
@@ -47,7 +48,7 @@ class CategoryResource extends Resource
                         ->maxLength(255)
                         ->live(onBlur:true)
                         ->afterStateUpdated(fn ($set  , $get) => $set('slug', Str::slug($get('name')))),
-                        Forms\Components\TextInput::make('slug')
+                       TextInput::make('slug')
                         ->required()
                         ->unique(Category::class, 'slug' ,ignoreRecord :true)
                         ->disabled()
@@ -73,10 +74,10 @@ class CategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('image'),
-                // ->image(),
+                    Tables\Columns\ImageColumn::make('image'),
+                    // ->image(),
+                    Tables\Columns\TextColumn::make('slug')
+                        ->searchable(),
 
                 Tables\Columns\IconColumn::make('is_active')
                     ->boolean(),
@@ -93,7 +94,14 @@ class CategoryResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                    Tables\Actions\ViewAction::make(),
+
+
+                ]),
+                // Tables\Actions\EditAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
