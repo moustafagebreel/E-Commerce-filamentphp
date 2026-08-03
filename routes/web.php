@@ -39,6 +39,8 @@ Route::get('/checkout/success',CheckoutPage::class);
 Route::get('/checkout/cancel',CheckoutPage::class);
 Route::get('/my-orders',MyOrdersPage::class);
 Route::get('/my-orders/{order}',MyOrderDetailPage::class);
+Route::get('/my-orders/{order}/invoice', \App\Livewire\OrderInvoicePage::class);
+
 Route::get('/login',LoginPage::class);
 Route::get('/register',RegisterPage::class);
 Route::get('/forgot',ForgotPasswordPage::class);
