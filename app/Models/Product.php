@@ -12,17 +12,18 @@ class Product extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'slug', 'description', 'price', 'image', 'is_active' ,'is_featured','on_sale','in_stock','category_id','brand_id'];
+    protected $fillable = ['name', 'slug', 'description', 'price', 'images', 'is_active' ,'is_featured','on_sale','in_stock','category_id','brand_id'];
 
 
-    public function categories()
+   
+    public function category()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function brand()
     {
-        return $this->belongsToMany(Brand::class);
+        return $this->belongsTo(Brand::class);
     }
 
     protected $casts = [
@@ -34,7 +35,6 @@ class Product extends Model
     {
         return $this->hasMany(Order_Item::class);
     }
-
 
 
 
