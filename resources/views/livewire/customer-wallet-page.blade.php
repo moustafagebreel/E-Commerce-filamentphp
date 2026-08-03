@@ -1,6 +1,11 @@
 <div class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
     <h1 class="text-3xl font-extrabold text-slate-800 dark:text-slate-100 mb-8">My Wallet & Loyalty Rewards</h1>
 
+    <!-- Gift Card Redeem -->
+    <div class="mb-8">
+        @livewire('gift-card-redeem-widget')
+    </div>
+
     @if (session()->has('wallet_success'))
         <div class="p-4 mb-6 text-sm text-green-700 bg-green-100 rounded-xl dark:bg-green-900/50 dark:text-green-200">
             {{ session('wallet_success') }}
@@ -13,6 +18,7 @@
     @endif
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+
         <!-- Wallet Balance Card -->
         <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 shadow-xl text-white">
             <span class="text-xs uppercase font-bold tracking-widest text-blue-200">Current Balance</span>
