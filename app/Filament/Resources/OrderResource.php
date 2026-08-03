@@ -223,15 +223,19 @@ class OrderResource extends Resource
 
                     SelectColumn::make('status')
                     ->options([
-                        'new' => 'new',
-                        'processing' => 'processing',
-                        'shipped' => 'shipped',
-                        'deliverd' => 'deliverd',
-                        'canceled' => 'canceled',
+                        'new' => 'New',
+                        'processing' => 'Processing',
+                        'shipped' => 'Shipped',
+                        'delivered' => 'Delivered',
+                        'cancelled' => 'Cancelled',
                     ])
                     ->label('order status')
                     ->searchable()
                     ->sortable(),
+
+                Tables\Columns\TextColumn::make('coupon_code')
+                    ->label('Coupon')
+                    ->placeholder('-'),
 
                 Tables\Columns\TextColumn::make('payment_method')
                     ->label('payment method')
@@ -243,24 +247,25 @@ class OrderResource extends Resource
                     ->searchable()
                     ->sortable(),
 
-                Tables\Columns\TextColumn::make('currency')
-                    ->searchable()
-                    ->sortable(),
-
-                Tables\Columns\TextColumn::make('shipping_method')
-                    ->searchable()
-                    ->sortable(),
-
-                Tables\Columns\TextColumn::make('notes')
-                    ->searchable()
-                    ->sortable(),
-
                 Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
                     ->searchable()
                     ->sortable(),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('status')
+                    ->options([
+                        'new' => 'New',
+                        'processing' => 'Processing',
+                        'shipped' => 'Shipped',
+                        'delivered' => 'Delivered',
+                        'cancelled' => 'Cancelled',
+                    ]),
+                Tables\Filters\SelectFilter::make('payment_status')
+                    ->options([
+                        'paid' => 'Paid',
+                        'unpaid' => 'Unpaid',
+                    ]),
             ])
             ->actions([
                 Tables\Actions\ViewAction::make(),
@@ -268,9 +273,18 @@ class OrderResource extends Resource
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\BulkAction::make('markAsProcessing')
+                        ->label('Mark as Processing')
+                        ->icon('heroicon-o-arrow-path')
+                        ->action(fn (\Illuminate\Database\Eloquent\Collection $records) => $records->each->update(['status' => 'processing'])),
+                    Tables\Actions\BulkAction::make('markAsShipped')
+                        ->label('Mark as Shipped')
+                        ->icon('heroicon-o-truck')
+                        ->action(fn (\Illuminate\Database\Eloquent\Collection $records) => $records->each->update(['status' => 'shipped'])),
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
+
     }
 
     public static function getRelations(): array
