@@ -58,7 +58,9 @@ Route::get('/addresses', \App\Livewire\AddressesPage::class);
 Route::get('/wallet', \App\Livewire\CustomerWalletPage::class);
 Route::get('/track-order', \App\Livewire\OrderTrackingPage::class);
 Route::get('/policies', \App\Livewire\StorePoliciesPage::class);
+Route::get('/trending', \App\Livewire\TrendingProductsPage::class);
 Route::get('/profile',ProfilePage::class);
+
 
 
 
