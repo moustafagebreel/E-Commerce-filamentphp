@@ -48,7 +48,9 @@ Route::get('/cancel',CancelPage::class);
 Route::get('/wishlist', \App\Livewire\WishlistPage::class);
 Route::get('/contact', \App\Livewire\ContactPage::class);
 Route::get('/faq', \App\Livewire\FaqPage::class);
+Route::get('/addresses', \App\Livewire\AddressesPage::class);
 Route::get('/profile',ProfilePage::class);
+
 
 
 
