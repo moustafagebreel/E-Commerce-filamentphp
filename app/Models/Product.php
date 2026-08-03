@@ -60,7 +60,18 @@ class Product extends Model
     {
         return $this->belongsToMany(Product::class, 'related_products', 'product_id', 'related_product_id');
     }
+
+    public function specifications()
+    {
+        return $this->hasMany(ProductSpecification::class)->orderBy('sort_order');
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(ProductQuestion::class)->where('is_approved', true);
+    }
 }
+
 
 
 
