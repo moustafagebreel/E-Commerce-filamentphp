@@ -36,6 +36,19 @@ class Product extends Model
         return $this->hasMany(Order_Item::class);
     }
 
+    public function reviews()
+    {
+        return $this->hasMany(ProductReview::class);
+    }
 
+    public function getAverageRatingAttribute()
+    {
+        return round($this->reviews()->where('is_approved', true)->avg('rating') ?? 0, 1);
+    }
 
+    public function getReviewsCountAttribute()
+    {
+        return $this->reviews()->where('is_approved', true)->count();
+    }
 }
+
