@@ -1,15 +1,19 @@
-﻿<?php
+<?php
 
 namespace App\Services;
 
+use App\Models\ActivityLog;
+
 class AuditLoggerService
 {
-    public function execute(array $params = []): array
+    public static function log(string $action, ?string $description = null, ?int $userId = null): ActivityLog
     {
-        return [
-            'status' => 'success',
-            'service' => 'AuditLoggerService',
-            'timestamp' => now()->toIso8601String(),
-        ];
+        return ActivityLog::create([
+            'user_id' => $userId ?? auth()->id(),
+            'action' => $action,
+            'description' => $description,
+            'ip_address' => request()->ip(),
+            'user_agent' => request()->userAgent(),
+        ]);
     }
 }
