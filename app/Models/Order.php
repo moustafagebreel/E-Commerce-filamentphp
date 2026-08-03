@@ -23,8 +23,18 @@ class Order extends Model
     'discount_amount',
     'shipping_amount',
     'shipping_method',
-    'notes'
+    'notes',
+    'cancellation_reason',
+    'cancelled_at',
 ];
+
+    protected $casts = [
+        'cancelled_at' => 'datetime',
+        'grand_total' => 'float',
+        'discount_amount' => 'float',
+        'shipping_amount' => 'float',
+    ];
+
 
 
     public function user()
