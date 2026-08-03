@@ -19,8 +19,10 @@
 
         @livewire('partials.footer')
 
+        @livewire('toast-notification')
 
         @livewireScripts
+
 
 
         @vite(['resources/js/dark-mode.js'])
