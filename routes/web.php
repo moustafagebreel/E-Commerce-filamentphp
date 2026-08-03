@@ -61,7 +61,9 @@ Route::get('/policies', \App\Livewire\StorePoliciesPage::class);
 Route::get('/trending', \App\Livewire\TrendingProductsPage::class);
 Route::get('/new-arrivals', \App\Livewire\NewArrivalsPage::class);
 Route::get('/sale', \App\Livewire\SalePage::class);
+Route::get('/dashboard', \App\Livewire\CustomerDashboardPage::class);
 Route::get('/profile',ProfilePage::class);
+
 
 
 
