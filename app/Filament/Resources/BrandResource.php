@@ -78,16 +78,22 @@ class BrandResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                    ,
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('slug')
-                    ,
+                    ->searchable(),
                 Tables\Columns\ImageColumn::make('image')
-                    ,
+                    ->square(),
+                Tables\Columns\TextColumn::make('products_count')
+                    ->counts('products')
+                    ->label('Total Products')
+                    ->sortable(),
                 Tables\Columns\IconColumn::make('is_active')
-                    ->boolean(),
+                    ->boolean()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
-                    
+                    ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
@@ -95,18 +101,14 @@ class BrandResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\TernaryFilter::make('is_active')
+                    ->label('Active Status'),
             ])
             ->actions([
-
-
-
                 ActionGroup::make([
                     Tables\Actions\EditAction::make(),
                     Tables\Actions\DeleteAction::make(),
                     Tables\Actions\ViewAction::make(),
-
-
                 ]),
             ])
             ->bulkActions([
@@ -115,6 +117,7 @@ class BrandResource extends Resource
                 ]),
             ]);
     }
+
 
     public static function getRelations(): array
     {
