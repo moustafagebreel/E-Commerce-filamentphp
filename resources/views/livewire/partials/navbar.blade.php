@@ -43,9 +43,12 @@
 
               @livewire('wishlist-count')
 
+              @livewire('currency-switcher')
+
               <a class="font-medium text-gray-500 hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="/faq">
                 FAQ
               </a>
+
 
               <a class="font-medium text-gray-500 hover:text-gray-400 py-3 md:py-6 dark:text-gray-400 dark:hover:text-gray-500" href="/contact">
                 Contact
