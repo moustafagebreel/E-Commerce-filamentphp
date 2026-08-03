@@ -80,7 +80,13 @@
     </div>
   </section>
 
+  <!-- Newsletter Section -->
+  <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
+    @livewire('newsletter-form')
+  </div>
+
   <!-- Customer Reviews Section -->
+
   @if($latestReviews->isNotEmpty())
     <section class="py-16">
       <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
