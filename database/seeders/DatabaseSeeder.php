@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             FaqSeeder::class,
             ProductReviewSeeder::class,
             FlashSaleSeeder::class,
+            ShippingZoneSeeder::class,
         ]);
+
 
     }
 }
