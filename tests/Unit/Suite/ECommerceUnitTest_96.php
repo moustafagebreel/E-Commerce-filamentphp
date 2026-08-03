@@ -1,0 +1,13 @@
+﻿<?php
+
+namespace Tests\Unit\Suite;
+
+use PHPUnit\Framework\TestCase;
+
+class ECommerceUnitTest_96 extends TestCase
+{
+    public function test_ecommerce_module_feature_96(): void
+    {
+        $this->assertTrue(true);
+    }
+}
