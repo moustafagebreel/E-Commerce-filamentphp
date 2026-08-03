@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_5' => 'قيمة عربية 5 لقسم dashboard',
-    'title_5' => 'عنوان عربي 5 لقسم dashboard',
-    'description_5' => 'وصف عربي 5 لقسم dashboard',
+    'key_6' => 'قيمة عربية 6 لقسم dashboard',
+    'title_6' => 'عنوان عربي 6 لقسم dashboard',
+    'description_6' => 'وصف عربي 6 لقسم dashboard',
 ];
