@@ -51,10 +51,20 @@ class WalletService
         return true;
     }
 
-    public static function addLoyaltyPoints(int $userId, int $points): UserWallet
+    public static function addLoyaltyPoints(int $userId, int $points, string $description = 'Reward points earned', ?string $referenceId = null): UserWallet
     {
         $wallet = self::getOrCreateWallet($userId);
         $wallet->increment('points', $points);
+
+        \App\Models\LoyaltyPointLog::create([
+            'user_id' => $userId,
+            'points' => $points,
+            'type' => 'earned',
+            'description' => $description,
+            'reference_id' => $referenceId,
+        ]);
+
         return $wallet;
     }
 }
+
