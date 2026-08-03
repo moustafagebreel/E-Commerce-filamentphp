@@ -169,9 +169,10 @@ class ProductResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ProductResource\RelationManagers\VariantsRelationManager::class,
         ];
     }
+
 
     public static function getPages(): array
     {
