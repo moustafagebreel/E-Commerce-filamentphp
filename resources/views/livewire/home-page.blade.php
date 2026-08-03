@@ -2,7 +2,10 @@
   <!-- Hero Section Slider -->
   <div class="w-full max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto pt-6">
     @livewire('components.home-banner-slider')
+
+    @livewire('flash-sale-widget')
   </div>
+
 
   <!-- Brands Section -->
   <section class="py-12 bg-slate-50 dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
