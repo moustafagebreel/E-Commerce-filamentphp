@@ -46,9 +46,10 @@ class Product extends Model
         return round($this->reviews()->where('is_approved', true)->avg('rating') ?? 0, 1);
     }
 
-    public function getReviewsCountAttribute()
+    public function variants()
     {
-        return $this->reviews()->where('is_approved', true)->count();
+        return $this->hasMany(ProductVariant::class);
     }
 }
+
 
