@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_9' => 'قيمة عربية 9 لقسم errors',
-    'title_9' => 'عنوان عربي 9 لقسم errors',
-    'description_9' => 'وصف عربي 9 لقسم errors',
+    'key_10' => 'قيمة عربية 10 لقسم errors',
+    'title_10' => 'عنوان عربي 10 لقسم errors',
+    'description_10' => 'وصف عربي 10 لقسم errors',
 ];

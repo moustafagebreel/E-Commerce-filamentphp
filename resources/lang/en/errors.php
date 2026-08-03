@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_9' => 'Value English 9 for errors',
-    'title_9' => 'Title English 9 for errors',
-    'description_9' => 'Description English 9 for errors',
+    'key_10' => 'Value English 10 for errors',
+    'title_10' => 'Title English 10 for errors',
+    'description_10' => 'Description English 10 for errors',
 ];
