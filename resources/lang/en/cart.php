@@ -1,7 +1,7 @@
 ﻿<?php
 
 return [
-    'key_19' => 'Value English 19 for cart',
-    'title_19' => 'Title English 19 for cart',
-    'description_19' => 'Description English 19 for cart',
+    'key_20' => 'Value English 20 for cart',
+    'title_20' => 'Title English 20 for cart',
+    'description_20' => 'Description English 20 for cart',
 ];
